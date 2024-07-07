@@ -1,0 +1,10 @@
+version: '3'
+services:
+  leaker:
+    image: leaker
+    build: .
+    restart: always
+    environment:
+      - TERM=xterm
+    ports:
+      - "1449:1449"

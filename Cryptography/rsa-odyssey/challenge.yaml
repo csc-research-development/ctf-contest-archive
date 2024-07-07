@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/redpwn/rcds/master/rcds/challenge/challenge.schema.yaml
+
+name: RSA Odyssey
+author: d4n & Wrth 
+description: |-
+  Welcome to the RSA Odyssey
+
+flag: CSC{s0me_b4sic_r5a_chall_ig_1a9f4560}
+
+provide:
+  - chal.py
+  - output.txt

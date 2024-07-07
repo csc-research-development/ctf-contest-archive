@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/redpwn/rcds/master/rcds/challenge/challenge.schema.yaml
+
+name: sussy bytes
+author: ringoshiro
+
+description: |-
+  whot da hail happen to ma audio file?? help fix plez 
+
+flag: CSC{pr3tty_c001_r19ht?!}
+
+# file yang mau dikasih ke peserta, kalau ngga ada hapus aja
+provide:
+  - sus.mp3
