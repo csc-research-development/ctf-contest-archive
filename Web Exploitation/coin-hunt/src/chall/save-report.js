@@ -1,0 +1,6 @@
+import fs from 'fs'
+
+process.on('message', (data) => {
+	fs.writeFileSync('/var/log/coin-hunt-log.txt', JSON.stringify(data))
+	process.exit(0)
+})

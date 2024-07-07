@@ -1,0 +1,8 @@
+version: '3'
+services:
+  coin-hunt:
+    image: coin-hunt:latest
+    build: .
+    restart: always
+    ports:
+      - "5001:5001"
