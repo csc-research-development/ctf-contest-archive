@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/redpwn/rcds/master/rcds/challenge/challenge.schema.yaml
+
+name: Seeds to all the trees
+author: Yobel
+
+description: |-
+  Tree!!!!!!
+
+flag: CSC{reverse_warmup_solved53254}
+
+provide:
+  - trees
+  - trees.c

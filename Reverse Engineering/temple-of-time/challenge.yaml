@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/redpwn/rcds/master/rcds/challenge/challenge.schema.yaml
+
+name: Temple of Time ⌛
+author: Yobel
+
+description: |-
+  I have to go 🏃‍♂️
+  
+  `nc 103.185.44.248 1338`
+
+flag: CSC{random_seed_with_xor_solved45564}
+
+provide:
+  - temple

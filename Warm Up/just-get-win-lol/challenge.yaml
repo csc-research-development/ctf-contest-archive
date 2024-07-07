@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/redpwn/rcds/master/rcds/challenge/challenge.schema.yaml
+
+name: Just Get Win LOL
+author: Yobel
+
+description: |-
+  GET WINNNNNNNN 😁!!!!!!
+
+  `nc 103.185.44.248 1439`
+
+flag: CSC{binex_warmup_solved2423534}
+
+provide:
+  - win
+  - win.c

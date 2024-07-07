@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/redpwn/rcds/master/rcds/challenge/challenge.schema.yaml
+
+name: Master Key
+author: cipichop
+
+description: |-
+  good luck on finding the master key!
+
+flag: CSC{yYAayYAay_Y0U_GOT_TH1S_RIGHT>:)}
+
+provide:
+  - master-key.zip
