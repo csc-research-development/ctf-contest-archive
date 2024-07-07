@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/redpwn/rcds/master/rcds/challenge/challenge.schema.yaml
+
+name: Leaker 🥶
+author: Yobel
+
+description: |-
+  Just leak all the things 😈
+  
+  `nc 103.185.44.248 1449`
+
+flag: CSC{format_string_vulnerability_solved21312}
+
+provide:
+  - leaker
+  - leaker.cpp

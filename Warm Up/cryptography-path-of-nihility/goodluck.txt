@@ -1,7 +1,0 @@
-ciphertext : 40 64 73 35 48 93 63 57 70 95 57 45 65 63 36 75 66 66 87 76 49 73 53 45 39 84 83 47 79 104 37 55 55 54 28 87 72 36 67 95 56 67 43 33 59 77 56 69 57
-
-alphabet : zebrascdfghiklmnopqtuvwxy
-
-key : acheronftw
-
-don't forget to wrap the result in CSC{}

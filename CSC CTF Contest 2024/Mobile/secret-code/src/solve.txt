@@ -1,0 +1,1 @@
+https://csc-ctf-contest-default-rtdb.firebaseio.com/.json

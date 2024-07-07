@@ -1,0 +1,13 @@
+import random
+import lib.constants as constants
+from lib.storage import used_ports
+
+def generate_random_port():
+    while True:
+        port = random.randint(constants.PORT_RANGE_START, constants.PORT_RANGE_END)
+        if port not in used_ports:
+            used_ports.add(port)
+            return port
+
+def release_port(port):
+    used_ports.remove(port)

@@ -1,0 +1,10 @@
+version: '3'
+services:
+  optimusprime:
+    image: optimusprime
+    build: .
+    restart: always
+    environment:
+      - TERM=xterm
+    ports:
+      - "1347:1347"

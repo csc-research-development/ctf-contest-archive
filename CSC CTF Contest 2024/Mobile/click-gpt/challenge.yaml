@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/redpwn/rcds/master/rcds/challenge/challenge.schema.yaml
+
+name: ClickGPT
+author: Yobel
+
+description: |-
+  A beginner software developer trying to create his first [mobile game](https://drive.google.com/file/d/10qNjFI9b48oxCx-2IJXC7YZb58fjF2Si/view?usp=sharing)
+
+flag: CSC{shared_preference_solved452543}

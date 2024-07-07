@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/redpwn/rcds/master/rcds/challenge/challenge.schema.yaml
+
+name: secret c0de
+author: ptr
+
+description: |-
+  I have build my own application to store my secret code. No one know where i put my secret code and no one can access my secret.
+
+flag: CSC{F!r3_b4Se_RTDB_M15C0nF1gUR4T!0N}
+
+provide:
+  - SecretCode v1.1.apk

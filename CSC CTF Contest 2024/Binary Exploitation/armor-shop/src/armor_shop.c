@@ -1,0 +1,111 @@
+// gcc -fstack-protector-all -Wl,-z,relro,-z,now armor_shop.c -o armor
+
+#include <stdio.h>
+#include <unistd.h>
+
+#define FLAG "CSC{integer_overflow_solved31343}"
+
+int dark = 0, depth = 0, fierce = 0, hylian = 0, stealth = 0;
+
+void init(){
+    setvbuf(stdin, 0, 2, 0);
+    setvbuf(stdout, 0, 2, 0);
+    setvbuf(stderr, 0, 2, 0);
+    alarm(10);
+}
+
+void banner(){
+    printf("    _                                ____  _                 \n");
+    printf("   / \\   _ __ _ __ ___   ___  _ __  / ___|| |__   ___  _ __  \n");
+    printf("  / _ \\ | '__| '_ ` _ \\ / _ \\| '__| \\___ \\| '_ \\ / _ \\| '_ \\ \n");
+    printf(" / ___ \\| |  | | | | | | (_) | |     ___) | | | | (_) | |_) |\n");
+    printf("/_/   \\_\\_|  |_| |_| |_|\\___/|_|    |____/|_| |_|\\___/| .__/ \n");
+    printf("                                                      |_|    \n");
+}
+
+int armor(int *gems){
+    int choice, cost = 0;
+    puts("1. Dark Armor [650]");
+    puts("2. Depths Armor [650]");
+    puts("3. Fierce Deity Armor [2.280]");
+    puts("4. Hylian Armor [320]");
+    puts("5. Stealth Armor [1.800]");
+    printf("Choose what you want to buy : ");
+    scanf("%1d", &choice);
+    switch (choice) {
+        case 1:
+            cost = 650;
+            if (*gems >= cost) {
+                dark = 1;
+                *gems -= cost;
+            }
+            break;
+        case 2:
+            cost = 650;
+            if (*gems >= cost) {
+                depth = 1;
+                *gems -= cost;
+            }
+            break;
+        case 3:
+            cost = 2280;
+            if (*gems >= cost) {
+                fierce = 1;
+                *gems -= cost;
+            }
+            break;
+        case 4:
+            cost = 320;
+            if (*gems >= cost) {
+                hylian = 1;
+                *gems -= cost;
+            }
+            break;
+        case 5:
+            cost = 1800;
+            if (*gems >= cost) {
+                stealth = 1;
+                *gems -= cost;
+            }
+            break;
+        default:
+            cost = 0;
+            break;
+    }
+    return cost;
+}
+
+int main(){
+    int gems = 10;
+    int temp;
+    int input;
+
+    init();
+    banner();
+
+    for(;;){
+        printf("Your gems : %d\n", gems);
+        printf("1. Armor list\n2. Checkout\n3. Give a tip\n> ");
+        scanf("%d", &input);
+        puts("");
+
+        if(input == 1){
+            armor(&gems);
+        }
+        else if(input == 2){
+            if (dark && depth && fierce && hylian && stealth){
+                printf("Here is your flag : %s\n", FLAG);
+                return 1337;
+            }
+
+            puts("Fail!");
+        }
+        else if(input == 3){
+            printf("How much tip do you want to give?\n> ");
+            scanf("%d", &temp);
+            gems -= temp > 0 ? temp : 0;
+        }
+        puts("");
+    }
+    return 0;
+}

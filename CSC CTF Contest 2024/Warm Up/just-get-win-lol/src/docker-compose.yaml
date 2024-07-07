@@ -1,0 +1,10 @@
+version: '3'
+services:
+  leaker:
+    image: just-get-win-lol
+    build: .
+    restart: always
+    environment:
+      - TERM=xterm
+    ports:
+      - "1439:1439"

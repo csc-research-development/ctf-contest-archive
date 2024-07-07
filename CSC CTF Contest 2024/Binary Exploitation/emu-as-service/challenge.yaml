@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/redpwn/rcds/master/rcds/challenge/challenge.schema.yaml
+
+name: emu as service
+author: m3rrow
+
+description: |-
+  honestly it's strange that we have to go through all these steps to get the famous "Ot0R!Emu" secrets.
+  she made prod and demo version and both of them have some kind of key for protection, too bad im only manage to steal the demo version :(
+  so rn your goal is to hacked into emu otori service and obtain the secret of society message!
+  the demo version had prebuilt-in keys so don't worry to much ;)
+  
+  `nc 103.185.44.248 1337`
+
+flag: CSC{Sooo_fun_&_w0ndAaa444H0Ooooyyy}
+
+# file yang mau dikasih ke peserta, kalau ngga ada hapus aja
+provide:
+  - chall_demo.zip

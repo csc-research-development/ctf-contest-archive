@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<%- include('partials/head') %>
+	<body class="bg-gray-950 flex flex-col h-screen">
+		<%- include('partials/navbar') %>
+		<div class="px-5 py-2 bg-[#131722] flex items-center justify-between">
+			<div class="text-gray-500">COINBASE:BTCUSD</div>
+			<div class="text-gray-300">
+				you have <%= user.assets[symbol] ? user.assets[symbol].amount :
+				0 %> BTC ($<%= user.assets[symbol] ?
+				user.assets[symbol].lastPrice.toLocaleString() : 0 %>)
+			</div>
+			<div class="flex items-center gap-2">
+				<button
+					class="px-5 y-1 bg-green-800 hover:bg-green-900 rounded-full"
+					data-cash="<%= user.cash %>"
+					onclick="buy(this)"
+				>
+					Buy
+				</button>
+				<button
+					class="px-5 y-1 bg-red-800 hover:bg-red-900 rounded-full"
+					data-usd="<%= user.assets[symbol] ? user.assets[symbol].lastPrice.toLocaleString() : 0 %>"
+					onclick="sell(this)"
+				>
+					Sell
+				</button>
+			</div>
+		</div>
+		<!-- TradingView Widget BEGIN -->
+		<div
+			class="tradingview-widget-container"
+			style="height: 100%; width: 100%"
+		>
+			<div
+				class="tradingview-widget-container__widget"
+				style="height: calc(100% - 32px); width: 100%"
+			></div>
+			<div class="tradingview-widget-copyright">
+				<a
+					href="https://www.tradingview.com/"
+					rel="noopener nofollow"
+					target="_blank"
+					><span class="blue-text"
+						>Track all markets on TradingView</span
+					></a
+				>
+			</div>
+			<script
+				type="text/javascript"
+				src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js"
+				async
+			>
+				{
+					"autosize": true,
+					"symbol": "<%= symbol %>",
+					"interval": "1",
+					"timezone": "Asia/Jakarta",
+					"theme": "dark",
+					"style": "1",
+					"locale": "en",
+					"hide_side_toolbar": false,
+					"allow_symbol_change": false,
+					"calendar": false,
+					"hide_volume": true,
+					"support_host": "https://www.tradingview.com"
+				}
+			</script>
+		</div>
+		<!-- TradingView Widget END -->
+
+		<script>
+			async function buy(btn) {
+				const amount = prompt(
+					`Enter amount in USD (buying power: $${btn.dataset.cash})`
+				)
+				if (!amount) return
+
+				const res = await fetch('/assets/buy', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({ amount: +amount }),
+				})
+
+				const data = await res.json()
+
+				if (!res.ok) {
+					alert(data.error)
+					return
+				}
+
+				location.reload()
+			}
+
+			async function sell(btn) {
+				const amount = prompt(
+					`Enter amount to sell in USD (max: $${btn.dataset.usd})`
+				)
+				if (!amount) return
+
+				const res = await fetch('/assets/sell', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({ amount: +amount }),
+				})
+
+				const data = await res.json()
+
+				if (!res.ok) {
+					alert(data.error)
+					return
+				}
+
+				location.reload()
+			}
+		</script>
+	</body>
+</html>

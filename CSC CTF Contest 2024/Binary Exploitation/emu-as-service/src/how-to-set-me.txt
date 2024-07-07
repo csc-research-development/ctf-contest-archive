@@ -1,0 +1,17 @@
+# must have:
+1. Docker
+2. docker-compose
+3. vm/vps/or whatevs
+
+# player side
+- chall_demo
+- netcat service
+- if no solve can giv chall_demo.c
+
+# server side
+- chall is the main source
+- flag.txt contain img.bb link containing image of flag (must edit before publish)
+
+# note
+- "chall"/"chall.c" and "chall_demo"/"chall_demo.c" is different file!!!
+- chall for server, chall_demo for player

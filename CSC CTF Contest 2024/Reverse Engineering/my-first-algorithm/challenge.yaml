@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/redpwn/rcds/master/rcds/challenge/challenge.schema.yaml
+
+name: My First Algorithm
+author: 0xV
+
+description: |-
+  This was my first time using Python, and I attempted to create some algorithms. I hope there are no vulnerabilities.
+
+flag: CSC{4lg0r1tma_4p44n_1n1_b3j1rrr}
+
+# file yang mau dikasih ke peserta, kalau ngga ada hapus aja
+provide:
+  - MyFirstAlgorithm.py

@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/redpwn/rcds/master/rcds/challenge/challenge.schema.yaml
+
+name: Armor Shop
+author: Yobel
+
+description: |-
+  I don't have enough gems, maybe by blowing up the shop I can buy a lot of things
+  
+  `nc 103.185.44.248 1380`
+
+flag: CSC{integer_overflow_solved31343}
+
+provide:
+  - armor_shop.c
+  - armor
